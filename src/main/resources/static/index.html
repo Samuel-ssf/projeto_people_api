@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b14"><title>People API · Gestão de pessoas</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="glow cyan" aria-hidden="true"></div><div class="glow violet" aria-hidden="true"></div>
+  <main class="shell">
+    <section id="login-view" class="login-view" aria-labelledby="login-title">
+      <div class="login-copy"><a class="brand" href="/"><b>P</b> People<span>API</span></a><p class="eyebrow">GESTÃO INTELIGENTE DE DADOS</p><h1>Controle de pessoas,<br><em>sem complexidade.</em></h1><p class="lead">Um painel seguro para cadastrar, consultar e organizar os dados da sua operação.</p><div class="features"><span>● Dados protegidos</span><span>● Consulta em tempo real</span><span>● API integrada</span></div></div>
+      <section class="glass login-card"><div class="card-title"><i>↗</i><div><p class="eyebrow">ACESSO SEGURO</p><h2 id="login-title">Bem-vindo de volta</h2></div></div><p class="muted">Informe suas credenciais para acessar o painel.</p><form id="login-form" novalidate><label for="username">Usuário</label><input id="username" name="username" autocomplete="username" placeholder="Seu usuário" required><label for="password">Senha</label><input id="password" name="password" type="password" autocomplete="current-password" placeholder="Sua senha" required><button class="button primary full" type="submit">Entrar no painel <b>→</b></button></form><p id="login-feedback" class="feedback" role="alert"></p></section>
+    </section>
+
+    <section id="dashboard-view" hidden aria-label="Painel People API">
+      <header class="topbar"><a class="brand" href="/"><b>P</b> People<span>API</span></a><div class="top-actions"><span id="api-status" class="status offline"><i></i><span>Verificando API</span></span><button id="logout-button" class="button ghost" type="button">Sair ↗</button></div></header>
+      <section class="glass hero"><div><p class="eyebrow">PAINEL DE CONTROLE</p><h1>Olá, <em>operador.</em></h1><p class="lead">Gerencie os registros da sua base de pessoas em um só lugar.</p></div><div class="orb" aria-hidden="true">✦</div></section>
+      <section class="dashboard-grid"><section class="glass register-card"><div class="section-title"><div><p class="eyebrow">NOVO REGISTRO</p><h2>Cadastrar pessoa</h2></div><i>+</i></div><form id="person-form" class="person-form" novalidate><div><label for="person-name">Nome</label><input id="person-name" name="name" maxlength="100" autocomplete="given-name" placeholder="Ex.: Nathaniel" required></div><div><label for="person-last-name">Sobrenome</label><input id="person-last-name" name="lastName" maxlength="100" autocomplete="family-name" placeholder="Ex.: Silva" required></div><div><label for="person-document">Documento</label><input id="person-document" name="document" maxlength="20" placeholder="Digite o documento" required></div><div><label for="person-email">E-mail</label><input id="person-email" name="email" type="email" maxlength="150" autocomplete="email" placeholder="nome@empresa.com" required></div><button class="button primary submit-person" type="submit">Cadastrar pessoa →</button></form></section><aside class="glass insight"><p class="eyebrow">VISÃO GERAL</p><strong id="people-count">—</strong><span>pessoas na base</span><div><span>Base de dados</span><b>● Sincronizada</b></div><p class="muted">Cadastre informações precisas para gerar consultas mais consistentes.</p></aside></section>
+      <section class="glass people-card"><div class="section-title list-title"><div><p class="eyebrow">BASE DE DADOS</p><h2>Pessoas cadastradas</h2></div><button id="load-people" class="button ghost" type="button">↻ Atualizar</button></div><div id="table-loading" class="loading" hidden><i></i> Carregando registros...</div><div class="table-wrap"><table><thead><tr><th>ID</th><th>Nome</th><th>Sobrenome</th><th>Documento</th><th>E-mail</th><th><span class="sr-only">Ações</span></th></tr></thead><tbody id="people"></tbody></table></div><div id="empty-state" class="empty" hidden><i>⌁</i><h3>Sua base está vazia</h3><p>Cadastre a primeira pessoa usando o formulário acima.</p></div></section>
+    </section>
+  </main>
+  <div id="modal" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="backdrop" data-close-modal></div><section class="glass modal-card"><button class="close" type="button" data-close-modal aria-label="Fechar">×</button><div id="modal-content"></div></section></div><div id="toast-region" class="toasts" aria-live="polite"></div>
+  <script src="/js/app.js"></script>
+</body>
+</html>

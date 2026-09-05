@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/peopledb
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8080
+
+app:
+  security:
+    username: ${APP_SECURITY_USERNAME:apiuser}
+    password: ${APP_SECURITY_PASSWORD:change-me}
+  nationalize:
+    base-url: https://api.nationalize.io
+    connect-timeout: 3s
+    read-timeout: 5s
